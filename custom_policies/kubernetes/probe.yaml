@@ -1,4 +1,5 @@
 metadata:
+  id: "MASA_CUSTOM_K8S_1"
   name: "Health probes must be configured"
   category: "Reliability"
 definition:
