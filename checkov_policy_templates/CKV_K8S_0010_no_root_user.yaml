@@ -1,7 +1,7 @@
 metadata:
-  name: CKV_K8S_0010
+  name: MASA_K8S_0010
   category: Kubernetes Security
-  id: CKV_K8S_0010
+  id: MASA_K8S_0010
   version: 1.0.0
 definition:
   cond_type: attribute
