@@ -1,0 +1,45 @@
+version: 2
+checks:
+  - id: MASA_K8S_1
+    name: "Ensure the use of non-root user for container security"
+    category: "Security"
+    resource: "Deployment"
+    message: "Containers should not run as root in production environments"
+    check:
+      field: spec.containers.securityContext.runAsUser
+      value: "1000"
+  - id: MASA_K8S_2
+    name: "Ensure only necessary privileges are granted to containers"
+    category: "Security"
+    resource: "Deployment"
+    message: "Containers should run with the least privileges"
+    check:
+      field: spec.containers.securityContext.privileged
+      value: "false"
+  - id: MASA_K8S_3
+    name: "Ensure resource limits are set for containers"
+    category: "Performance"
+    resource: "Deployment"
+    message: "Containers should have CPU and memory limits set"
+    check:
+      field: spec.containers.resources.limits
+      value:
+        memory: "256Mi"
+        cpu: "500m"
+  - id: MASA_K8S_4
+    name: "Ensure that secrets are not stored in ConfigMaps"
+    category: "Security"
+    resource: "ConfigMap"
+    message: "Do not store sensitive data like passwords or tokens in ConfigMaps"
+    check:
+      field: metadata.name
+      value: "secrets"
+  - id: MASA_K8S_5
+    name: "Ensure that sensitive data is encrypted at rest"
+    category: "Security"
+    resource: "Secret"
+    message: "Secrets must be encrypted in Kubernetes"
+    check:
+      field: metadata.annotations
+      value:
+        "kubernetes.io/encrypted": "true"
