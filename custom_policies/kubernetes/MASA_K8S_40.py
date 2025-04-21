@@ -1,7 +1,7 @@
 class DropCapabilities(BaseResourceCheck):
     def __init__(self):
         name = "Ensure capabilities are minimized"
-        id = "CKV_K8S_40"
+        id = "MASA_K8S_40"
         supported_resources = ["Pod", "Deployment"]
         categories = [CheckCategories.KUBERNETES]
         super().__init__(name=name, id=id, categories=categories, supported_entities=supported_resources)
