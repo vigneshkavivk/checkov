@@ -1,0 +1,14 @@
+metadata:
+  name: CKV_K8S_0160
+  category: Kubernetes Security
+  id: CKV_K8S_0160
+  version: 1.0.0
+definition:
+  cond_type: attribute
+  resource_types:
+    - Kubernetes
+  attribute: metadata.name
+  operator: exists
+  value: true
+  validations:
+    - use_image_digest
