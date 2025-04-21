@@ -1,0 +1,8 @@
+metadata:
+  name: "Health probes must be configured"
+  category: "Reliability"
+definition:
+  cond_type: "attribute"
+  resource_types: ["kubernetes_deployment", "kubernetes_statefulset"]
+  attribute: "spec.template.spec.containers[*].livenessProbe"
+  operator: "exists"
