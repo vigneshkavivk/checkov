@@ -1,0 +1,19 @@
+metadata:
+  name: CKV_K8S_MASA_1
+  category: kubernetes
+  id: CKV_K8S_MASA_1
+  version: 1.0
+  framework: kubernetes
+  description: "Ensure no resources are deployed in the default namespace."
+definition:
+  cond_type: attribute
+  resource_types:
+    - KubernetesPod
+    - KubernetesDeployment
+    - KubernetesService
+    - KubernetesStatefulSet
+    - KubernetesDaemonSet
+    - KubernetesJob
+  attribute: metadata.namespace
+  operator: not_equals
+  value: default
