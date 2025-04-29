@@ -1,0 +1,13 @@
+metadata:
+  name: "Ensure xyz-label is present"
+  id: "CKV_K8S_CUSTOM_001"
+  category: "KUBERNETES"
+  severity: "MEDIUM"
+
+definition:
+  cond_type: "attribute"
+  resource_types:
+    - "kubernetes_pod"
+    - "kubernetes_deployment"
+  attribute: "metadata.labels.xyz-label"
+  operator: "exists"
