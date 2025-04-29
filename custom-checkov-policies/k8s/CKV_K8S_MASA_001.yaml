@@ -9,5 +9,6 @@ definition:
   resource_types:
     - "kubernetes_pod"
     - "kubernetes_deployment"
-  attribute: "metadata.labels.xyz-label"
-  operator: "exists"
+  attribute: "metadata.namespace"
+  operator: "not_equals"
+  value: "default"
