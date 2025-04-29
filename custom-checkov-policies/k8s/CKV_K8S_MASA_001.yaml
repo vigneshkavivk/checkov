@@ -1,6 +1,6 @@
 metadata:
   name: "Ensure xyz-label is present"
-  id: "CKV_K8S_CUSTOM_001"
+  id: "CKV_K8S_MASA_001"
   category: "KUBERNETES"
   severity: "MEDIUM"
 
