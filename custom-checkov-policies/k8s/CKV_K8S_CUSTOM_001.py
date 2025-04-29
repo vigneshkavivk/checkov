@@ -1,4 +1,4 @@
-from checkov.kubernetes.base_resource_check import BaseResourceCheck
+from checkov.kubernetes.checks.resource.base_resource_check import BaseResourceCheck
 from checkov.common.models.enums import CheckCategories, CheckResult
 
 class ExampleCustomCheck(BaseResourceCheck):
